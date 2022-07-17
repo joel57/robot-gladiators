@@ -10,42 +10,40 @@ console.log(playerName, playerAttack, playerHealth);
 
 var enemyName = "Roborto";
 var enemyHealth = 50;
-var enemyAttack = 12;
+var enemyAttack = 121;
 
 var fight = function() {
   //alert players that they are starting the round
   window.alert("Welcom to Robot Gladiators!");
 
-  //subtract the value of 'playerAttack' from he value of 'enemyHealth and use that result to update the value in the 'enemyHealth' varible.
- enemyHealth = enemyHealth - playerAttack;
+  var promptFight = window.prompt("Would you like to FIGHT or SKIP this battle? Enter 'FIGHT' or 'SKIP' to choose. ");
 
-
-  //log resalting message to the console so we know that it worked.
-console.log ( playerName + " attacked " + enemyName + "." + " now has " + enemyHealth + " health remaining.")
-
-// check enemy's health.
-if(enemyHealth <= 0) {
-  window.alert(enemyName + " has lost! ");
-}
-else {
-  window.alert(enemyName + " still has " + enemyHealth + "health left.");
-}
-
-  //subtract the value of 'enemyAttack' from the value of 'playerHealth' and use that result to update the value in the 'playerHealth' varible.
-playerHealth = playerHealth - enemyAttack;
-
-
-  //log a resulting message to the console so we know that it worked.
-  console.log(
-    enemyName + " attacked " + playerName +   "." + playerName + " now has " + playerHealth + " health remaining.");
-
-  // check player's health.
-  if (playerHealth <= 0) {
-    window.alert(playerName + " has lost! ");
+  //if player chooses to fight, then fight.
+  if (promptFight === "fight" || promptFight === "FIGHT") {
+    //remove enemy's health by subtracting the amount set in the playerAttack variaible
+    enemyHealth = enemyHealth - playerAttack;
+    console.log(
+      playerName + " attack " + enemyName + "." + enemyName + " now has " + enemyHealth + " health remaining.");
   }
-  else {
-    window.alert(playerName + " still has " + playerHealth + "health left.");
+
+  //check enemy's health
+  if (enemyHealth <= 0) {
+    window.alert(enemyName + " has lost!");
+  } else {
+    window.alert(enemyName + "still has " + enemyHealth + " health left.");
   }
+
+  // remove player's health by subtracting the amount set in the enemyAttack varible
+  playerHealth = playerHealth - enemyAttack;
+  console.llog(
+    enemyName + " attacked " + playerName + "." + playerName + " now has " + playerHealth + " health remaining."); 
+
+    //check players health
+    if (playerHealth <= 0) {
+      
+    }
+  
+
   
 };
 
